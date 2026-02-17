@@ -77,8 +77,8 @@ const Nav = ({ products }) => {
         </div>
 
         <Link to="/">
-          <img src={verticalcclogo} alt="" width={150} className="navLogo" />
-          <img src={culturelogo} alt="" className="navnewlogo"/>
+          <img src={verticalcclogo} alt=""  className="navLogo" />
+          <img src={culturelogo} alt=""  className="navnewlogo"/>
         </Link>
 
         <div className="mobile-right">

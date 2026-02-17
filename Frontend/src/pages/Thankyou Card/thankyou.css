@@ -1,0 +1,124 @@
+/* PAGE WRAPPER */
+.thankyou-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f8fafc, #eef2ff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* CARD */
+.thankyou-card {
+  background: white;
+  padding: 40px 32px;
+  border-radius: 18px;
+  max-width: 420px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
+  animation: pop 0.5s ease;
+}
+
+/* TITLE */
+.thankyou-card h1 {
+  font-size: 1.9rem;
+  margin-bottom: 12px;
+  color: #16a34a;
+}
+
+/* ORDER TEXT */
+.thankyou-card p {
+  font-size: 1rem;
+  color: #555;
+  margin: 8px 0;
+}
+
+/* ORDER ID */
+.thankyou-card strong {
+  display: block;
+  margin: 10px 0 18px;
+  font-size: 0.95rem;
+  color: #111;
+  word-break: break-all;
+}
+
+/* REDIRECT TEXT */
+.redirect-text {
+  font-size: 0.9rem;
+  color: #777;
+  margin-bottom: 18px;
+}
+
+/* BUTTON */
+.thankyou-card button {
+  background: black;
+  color: white;
+  border: none;
+  padding: 13px 26px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: 0.25s ease;
+}
+
+.thankyou-card button:hover {
+  background: #111;
+  transform: translateY(-2px);
+}
+
+/* POP ANIMATION */
+@keyframes pop {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ---------------- MOBILE SMALL ---------------- */
+@media (max-width: 480px) {
+  .thankyou-card {
+    padding: 28px 20px;
+  }
+
+  .thankyou-card h1 {
+    font-size: 1.5rem;
+  }
+
+  .thankyou-card p {
+    font-size: 0.9rem;
+  }
+
+  .thankyou-card button {
+    width: 100%;
+  }
+}
+
+/* ---------------- PHONES LARGE ---------------- */
+@media (min-width: 481px) and (max-width: 768px) {
+  .thankyou-card {
+    max-width: 380px;
+  }
+}
+
+/* ---------------- TABLETS / IPAD ---------------- */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .thankyou-card {
+    max-width: 440px;
+  }
+}
+
+/* ---------------- LARGE SCREENS ---------------- */
+@media (min-width: 1400px) {
+  .thankyou-card {
+    max-width: 520px;
+  }
+
+  .thankyou-card h1 {
+    font-size: 2.2rem;
+  }
+}

@@ -1,0 +1,144 @@
+
+.main-box {
+  display: flex;
+  min-height: calc(100vh - 90px);
+  margin-top: 90px;
+  background: #f6f7fb;
+  width: 100%;
+}
+
+
+.first-box {
+  position: sticky;
+  top: 90px;
+  width: 230px;
+  padding: 20px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-radius: 0 16px 16px 0;
+  color: black;
+}
+
+
+
+.first-box .bttn {
+  background: transparent;
+  border: none;
+  color: #111827;
+  font-weight: 600;
+ 
+  padding: 12px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: left;
+  font-size: 15px;
+  transition: 0.2s ease;
+}
+
+.first-box .bttn:hover {
+   background: #1f2933;
+   color: white;
+}
+
+.first-box .bttn.active {
+  background: #2563eb;
+  color: white;
+}
+
+
+
+.second-box {
+  flex: 1;
+  margin-left: 20px;
+  padding: 28px;
+  background: transparent;
+  border-radius: 14px;
+}
+
+
+
+.admin-table,
+.second-box table {
+  width: 100%;
+  background: white;
+  border-radius: 14px;
+  border-collapse: collapse;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.07);
+}
+
+.admin-table thead,
+.second-box table thead {
+  background: #f1f5f9;
+}
+
+.admin-table th,
+.admin-table td,
+.second-box table th,
+.second-box table td {
+  padding: 14px 16px;
+  text-align: left;
+  font-size: 14px;
+}
+
+.admin-table tbody tr:nth-child(even),
+.second-box table tbody tr:nth-child(even) {
+  background: #fafafa;
+}
+
+.admin-table tbody tr:hover,
+.second-box table tbody tr:hover {
+  background: #eef2ff;
+}
+
+
+
+select {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  background: white;
+  cursor: pointer;
+}
+
+
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 22px;
+}
+
+.stat-card {
+  background: white;
+  padding: 22px;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  font-weight: 600;
+  font-size: 15px;
+}
+
+
+
+@media (max-width: 900px) {
+  .main-box {
+    flex-direction: column;
+  }
+
+  .first-box {
+    width: 100%;
+    flex-direction: row;
+    overflow-x: auto;
+    border-radius: 0;
+  }
+
+  .first-box .bttn {
+    white-space: nowrap;
+  }
+
+  .second-box {
+    margin-left: 0;
+    padding: 18px;
+  }
+}

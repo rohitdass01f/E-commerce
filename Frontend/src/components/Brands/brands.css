@@ -1,0 +1,47 @@
+.brandbox {
+  background-color: #f8f8f8d8;
+  height: 260px;
+  position: relative;
+  overflow: hidden;
+}
+
+.boxheading {
+  padding-top: 30px;
+  padding-left: 70px;
+  font-size: 20px;
+  font-weight: 800;
+  color: #222;
+}
+
+.imgbox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 50px; 
+  padding: 50px 60px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  transition: transform 0.6s ease;
+}
+
+.imgbox::-webkit-scrollbar {
+  display: none;
+}
+
+.brand-item {
+  flex: 0 0 auto;
+}
+
+.brandimg {
+  height: 110px;
+  width: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.brandimg:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}

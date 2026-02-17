@@ -1,0 +1,113 @@
+.daydeals-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 60px 80px;
+  font-family: "Poppins", sans-serif;
+  background-color: #e6e2e2;
+  position: relative;
+}
+
+.daydeals-left {
+  width: 25%;
+}
+
+.daydeals-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 10px;
+}
+
+.daydeals-subtitle {
+  font-size: 15px;
+  color: #555;
+  line-height: 1.5;
+}
+
+.daydeals-products {
+  height: 410px;  
+  width: 80%;
+  display: flex;
+
+  justify-content: flex-start;
+  align-items: center;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  background-color: #fff;
+  
+  transition: transform 0.6s ease;
+}
+
+.daydeals-products .product-card:first-child {
+  margin-left: 40px;
+}
+
+
+.daydeals-products .product-card:last-child {
+  margin-right: 40px;
+}
+
+.hover-area {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0; 
+  width: 100px; 
+  height: 100%;
+  z-index: 0;
+  background: transparent;
+}
+
+
+.hover-area:hover ~ .daydeals-products {
+  transform: translateX(-100px);
+}
+
+.daydeals-products::-webkit-scrollbar {
+  display: none;
+}
+
+.product-card {
+  min-width: 220px;
+  max-width: 240px;
+  text-align: left;
+  padding-top: 15px;
+}
+
+.product-card img {
+  border: 2px solid #c2c0c0;
+  height: 240px;
+  width: 100%;
+  margin-bottom: 10px;
+  object-fit:contain;
+}
+
+.product-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.product-price {
+  font-size: 14px;
+  color: black;
+}
+
+@media (max-width: 768px) {
+  .daydeals-container {
+    flex-direction: column;
+    padding: 30px;
+  }
+
+  .daydeals-left {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .daydeals-products {
+    width: 100%;
+    gap: 20px;
+  }
+}

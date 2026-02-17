@@ -1,0 +1,19 @@
+@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@plugin "flowbite/plugin";
+@source "../node_modules/flowbite";
+.carousel > div {
+  width: 100% !important;
+}
+
+/* Enable manual dark mode via .dark selector */
+@custom-variant dark (&:where(.dark, .dark *));
+
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
+

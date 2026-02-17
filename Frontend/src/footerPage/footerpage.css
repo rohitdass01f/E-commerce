@@ -1,0 +1,98 @@
+.footer {
+  background: #181818;
+  color: #666;
+  padding: 40px 60px;
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 250px;
+}
+
+.footer-section h3 {
+  color: #fff;
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+/* SOCIAL */
+.social-icons {
+  display: flex;
+  gap: 20px;
+}
+
+.social-icons a {
+  font-size: 36px;
+  color: #666;
+  transition: 0.3s;
+}
+
+.social-icons a:hover {
+  color: #fff;
+}
+
+/* STORE */
+.store-buttons {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.store-buttons img {
+  height: 45px;
+  cursor: pointer;
+}
+
+/* COPYRIGHT */
+.copyright {
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* NEWSLETTER */
+.newsletter {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.newsletter input {
+  background: transparent;
+  border: 1px solid #333;
+  padding: 10px;
+  color: #fff;
+  width: 100%;
+}
+
+.newsletter button {
+  background: #fff;
+  border: none;
+  padding: 10px 14px;
+  cursor: pointer;
+}
+
+
+/* Tablet */
+@media (max-width: 768px) {
+  .footer {
+    padding: 30px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .footer {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .social-icons,
+  .store-buttons,
+  .newsletter {
+    justify-content: center;
+  }
+}

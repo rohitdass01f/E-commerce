@@ -72,24 +72,14 @@ const Nav = ({ products }) => {
   return (
     <div>
       <div className="first-container">
-        <div className="menu-icon" onClick={() => setMenuOpen(!menuOpen)}>
-          {menuOpen ? <FiX size={28} /> : <FiMenu size={28} />}
-        </div>
-
         <Link to="/">
-          <img src={verticalcclogo} alt=""  className="navLogo" />
-          <img src={culturelogo} alt=""  className="navnewlogo"/>
+          <img src={verticalcclogo} alt="" className="navLogo" />
         </Link>
-
-        <div className="mobile-right">
-          <IoSearch size={22} />
-          <button className="get-app-btn">Get App</button>
-        </div>
 
         <div className="search-bar">
           <input
             type="text"
-            className="serach-bar"
+            className="search-input"
             placeholder="Find Your Drip"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
@@ -98,51 +88,23 @@ const Nav = ({ products }) => {
             }}
           />
         </div>
+
         <button className="search-icon">
           <IoSearch size={30} />
         </button>
 
         <div className={`nav-left ${menuOpen ? "open" : ""}`}>
-          <div
-            style={{
-              border: "2px solid #c2c0c0",
-              height: "45px",
-              width: "75px",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              gap: "5px",
-              fontWeight: "500",
-            }}
-          >
+          <div className="nav-box country-box">
             <img src={flag} alt="" className="flag" />
             <p>IN</p>
           </div>
 
-          <div
-            style={{
-              border: "2px solid #c2c0c0",
-              height: "45px",
-              width: "45px",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
+          <div className="nav-box icon-box">
             <BsQuestionCircle size={20} />
           </div>
 
           <div
-            style={{
-              border: "2px solid #c2c0c0",
-              height: "45px",
-              width: "45px",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              cursor: "pointer",
-              position: "relative",
-            }}
+            className="nav-box icon-box cart-box"
             onClick={() => setOpenCart(true)}
             title="cart"
           >
@@ -151,24 +113,8 @@ const Nav = ({ products }) => {
           </div>
 
           {token ? (
-            <div
-              style={{
-                border: "2px solid #c2c0c0",
-                borderRadius: "5px",
-                height: "45px",
-                width: "45px",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                cursor: "pointer",
-              }}
-            >
-              <FaUser
-                size={21}
-                onClick={handleClick}
-                style={{ cursor: "pointer", width: "45px" }}
-                title="Profile"
-              />
+            <div className="nav-box icon-box user-box">
+              <FaUser size={21} onClick={handleClick} title="Profile" />
             </div>
           ) : (
             <button className="logbtn" title="login">

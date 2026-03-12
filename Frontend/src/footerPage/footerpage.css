@@ -68,9 +68,10 @@
   width: 100%;
 }
 
-.newsletter button {
+.email-btn {
   background: #fff;
   border: none;
+  width: 50px;
   padding: 10px 14px;
   cursor: pointer;
 }

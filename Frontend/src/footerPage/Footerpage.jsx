@@ -67,7 +67,7 @@ const FooterPage = () => {
         <h3>SUBSCRIBE TO OUR NEWSLETTER</h3>
         <div className="newsletter">
           <input type="email" placeholder="Enter your email address" />
-          <button>
+          <button className="email-btn">
             <FaArrowRight />
           </button>
         </div>

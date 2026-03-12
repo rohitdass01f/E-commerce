@@ -1,0 +1,62 @@
+.orders-box{
+background:white;
+padding:30px;
+border-radius:12px;
+box-shadow:0 5px 20px rgba(0,0,0,0.08);
+}
+
+.orders-box table{
+width:100%;
+border-collapse:collapse;
+margin-top:20px;
+}
+
+.orders-box th,
+.orders-box td{
+padding:12px;
+border-bottom:1px solid #eee;
+text-align:left;
+}
+
+.orders-box th{
+background:#f3f4f6;
+}
+
+
+/* TABLET */
+
+@media(max-width:768px){
+
+.orders-box{
+padding:20px;
+}
+
+.orders-box table{
+font-size:14px;
+}
+
+}
+
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+.orders-box table{
+display:block;
+overflow-x:auto;
+white-space:nowrap;
+}
+
+}
+
+
+/* SMALL MOBILE */
+
+@media(max-width:480px){
+
+.orders-box{
+padding:15px;
+}
+
+}

@@ -1,51 +1,69 @@
-//
-
-import React, { useEffect, useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import ProfileDetails from "./ProfileDetails";
+import UserOrder from "./UserOrder";
+import UserAddress from "./UserAddress";
 import "./profile.css";
 
 const Profile = () => {
-  const [user, setUser] = useState(null);
+
+  const [activePage,setActivePage] = useState("profile")
   const navigate = useNavigate();
 
-  useEffect(() => {
-    const storedUser = localStorage.getItem("user");
-    if (storedUser) {
-      setUser(JSON.parse(storedUser));
-    }
-  }, []);
-
-  const handleLogout = () => {
+   const handleLogout = () => {
     localStorage.removeItem("token");
     localStorage.removeItem("user");
-
     navigate("/");
   };
 
   return (
-    <div className="profile-container">
-      {user ? (
-        <div className="profile-card">
-          <h2 className="profile-title">User Profile</h2>
 
-          <div className="profile-info">
-            <p>
-              <strong>Full Name:</strong> {user.fullname}
-            </p>
-            <p>
-              <strong>Email:</strong> {user.email}
-            </p>
-          </div>
+    <div className="profile-main">
 
-          <button className="logout-btn" onClick={handleLogout}>
-            Logout
-          </button>
-        </div>
-      ) : (
-        <p className="loading-text">Loading user data...</p>
-      )}
+      {/* SIDEBAR */}
+
+      <div className="profile-sidebar">
+
+        <button
+        className={activePage==="profile"?"active":""}
+        onClick={()=>setActivePage("profile")}
+        >
+        Profile
+        </button>
+
+        <button
+        className={activePage==="orders"?"active":""}
+        onClick={()=>setActivePage("orders")}
+        >
+        Orders
+        </button>
+
+        <button
+        className={activePage==="address"?"active":""}
+        onClick={()=>setActivePage("address")}
+        >
+        Address
+        </button>
+
+        <button className="bttn" onClick={handleLogout}>
+          Logout
+        </button>
+
+      </div>
+
+
+      {/* RIGHT SIDE */}
+
+      <div className="profile-content">
+
+      {activePage==="profile" && <ProfileDetails/>}
+      {activePage==="orders" && <UserOrder/>}
+      {activePage==="address" && <UserAddress/>}
+
+      </div>
+
     </div>
-  );
-};
+  )
+}
 
 export default Profile;

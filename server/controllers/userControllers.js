@@ -43,11 +43,87 @@ const createUser = async (req, res) => {
   }
 };
 
+const updateProfile = async (req, res) => {
+  try {
+
+    const { fullname, phone } = req.body;
+
+    const user = await User.findByIdAndUpdate(
+      req.user._id,
+      { fullname, phone },
+      { new: true }
+    ).select("-password");
+
+    res.json({
+      success: true,
+      user,
+    });
+
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
+const getProfile = async (req, res) => {
+  try {
+
+    const user = await User.findById(req.user._id).select("-password");
+
+    res.json({
+      success: true,
+      user,
+    });
+
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
+const addAddress = async (req, res) => {
+  try {
+
+    const user = await User.findById(req.user._id);
+
+    user.addresses.push(req.body);
+
+    await user.save();
+
+    res.json({
+      success: true,
+      addresses: user.addresses,
+    });
+
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
+const updateAddress = async (req, res) => {
+  try {
+
+    const { addressId } = req.params;
+
+    const user = await User.findById(req.user._id);
+
+    const address = user.addresses.id(addressId);
+
+    Object.assign(address, req.body);
+
+    await user.save();
+
+    res.json({
+      success: true,
+      addresses: user.addresses,
+    });
+
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
 const getAllUsers = async (req, res) => {
   try {
-    const users = await User.find()
-      .select("-password")
-      .sort({ createdAt: -1 });
+    const users = await User.find().select("-password").sort({ createdAt: -1 });
 
     res.status(200).json(users);
   } catch (error) {
@@ -55,7 +131,6 @@ const getAllUsers = async (req, res) => {
     res.status(500).json({ message: "Failed to fetch users" });
   }
 };
-
 
 const login = async (req, res) => {
   try {
@@ -97,5 +172,9 @@ const login = async (req, res) => {
 module.exports = {
   createUser,
   getAllUsers,
+  updateProfile,
+  updateAddress,
+  addAddress,
+  getProfile,
   login,
 };

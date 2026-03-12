@@ -19,7 +19,7 @@ const authMiddleware = async (req, res, next) => {
       return res.status(401).json({ message: "User not found" });
     }
 
-    req.user = user; // 👈 yahin attach ho raha hai
+    req.user = user; 
 
     next();
   } catch (err) {

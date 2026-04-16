@@ -3,7 +3,7 @@ import { FaSquareXTwitter, FaArrowRight } from "react-icons/fa6";
 import { TbBrandYoutube } from "react-icons/tb";
 import google from "../assets/googleplay.png";
 import appstore from "../assets/App Store.png";
-import "./FooterPage.css";
+import "./footerpage.css";
 
 const FooterPage = () => {
   return (

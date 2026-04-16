@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
-import "./Customcarousel.css"; 
+import "./customcarousel.css"; 
 
 const images = [
   "/assets/Allsaints.webp",

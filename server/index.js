@@ -13,7 +13,7 @@ const categoryRoutes = require("./routes/categoryRoutes");
 
 
 app.use(express.json());
-app.use(cors(corsOptions));
+app.use(cors());
 app.use(bodyParser.json());
 
 

@@ -19,7 +19,7 @@ const ProductCard = () => {
   const getProducts = async () => {
     setLoading(true);
     try {
-      const response = await fetch(`http://localhost:3000/product`);
+      const response = await fetch(`https://e-commerce-2tio.onrender.com/product`);
 
       const data = await response.json();
       console.log(data);

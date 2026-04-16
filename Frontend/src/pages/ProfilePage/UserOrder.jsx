@@ -14,7 +14,7 @@ fetchOrders()
 
 const fetchOrders = async()=>{
 
-const res = await fetch("http://localhost:3000/order/myorders",{
+const res = await fetch("https://e-commerce-2tio.onrender.com/order/myorders",{
 
 headers:{
 Authorization:`Bearer ${token}`

@@ -26,7 +26,7 @@ const Payment = () => {
 
     const token = localStorage.getItem("token");
 
-    const res = await fetch(`http://localhost:3000/payment/create/${id}`, {
+    const res = await fetch(`https://e-commerce-2tio.onrender.com/payment/create/${id}`, {
       method: "POST",
       headers: {
         Authorization: `Bearer ${token}`,
@@ -48,7 +48,7 @@ const Payment = () => {
       order_id: data.razorpayOrderId,
 
       handler: async function (response) {
-        await fetch("http://localhost:3000/payment/verify", {
+        await fetch("https://e-commerce-2tio.onrender.com/payment/verify", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

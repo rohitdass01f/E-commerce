@@ -55,7 +55,7 @@ const addToCart = () => {
 const getRelatedProducts = async (brand) => {
   try {
     const res = await fetch(
-  `http://localhost:3000/product/brand/${product.brand}?exclude=${id}`
+  `https://e-commerce-2tio.onrender.com/product/brand/${product.brand}?exclude=${id}`
 )
 
 
@@ -75,7 +75,7 @@ useEffect(() => {
 
   const getProducts = async () => {
     try {
-      const response = await fetch(`http://localhost:3000/product/${id}`);
+      const response = await fetch(`https://e-commerce-2tio.onrender.com/product/${id}`);
 
       const data = await response.json();
       console.log(data);

@@ -11,7 +11,7 @@ const AdminCategory = () => {
   const token = (localStorage.getItem("token"));
 
   const fetchCategories = async () => {
-    const res = await fetch("http://localhost:3000/category");
+    const res = await fetch("https://e-commerce-2tio.onrender.com/category");
     const data = await res.json();
     setCategories(data);
   };
@@ -23,7 +23,7 @@ const AdminCategory = () => {
   const addCategory = async () => {
     if (!newCategory.trim()) return;
 
-    await fetch("http://localhost:3000/category", {
+    await fetch("https://e-commerce-2tio.onrender.com/category", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -38,7 +38,7 @@ const AdminCategory = () => {
   };
 
   const deleteCategory = async (id) => {
-    const res = await fetch(`http://localhost:3000/category/${id}`, {
+    const res = await fetch(`https://e-commerce-2tio.onrender.com/category/${id}`, {
       method: "DELETE",
       headers: {
         Authorization: `Bearer ${token}`,

@@ -16,7 +16,7 @@ const fetchProfile = async()=>{
 
 try{
 
-const res = await fetch("http://localhost:3000/user/profile",{
+const res = await fetch("https://e-commerce-2tio.onrender.com/user/profile",{
 
 method:"GET",
 
@@ -41,7 +41,7 @@ console.log(err)
 
 const updateProfile = async()=>{
 
-await fetch("http://localhost:3000/user/profile",{
+await fetch("https://e-commerce-2tio.onrender.com/user/profile",{
 
 method:"PUT",
 

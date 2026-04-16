@@ -22,7 +22,7 @@ fetchAddress()
 
 const fetchAddress = async()=>{
 
-const res = await fetch("http://localhost:3000/address",{
+const res = await fetch("https://e-commerce-2tio.onrender.com/address",{
 headers:{
 Authorization:`Bearer ${token}`
 }
@@ -37,7 +37,7 @@ setAddresses(data)
 
 const addAddress = async()=>{
 
-const res = await fetch("http://localhost:3000/address",{
+const res = await fetch("https://e-commerce-2tio.onrender.com/address",{
 
 method:"POST",
 

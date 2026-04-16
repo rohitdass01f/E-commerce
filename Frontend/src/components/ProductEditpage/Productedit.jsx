@@ -19,7 +19,7 @@ const Productedit = () => {
   const [image, setImage] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/category")
+    fetch("https://e-commerce-2tio.onrender.com/category")
       .then((res) => res.json())
       .then((data) => setCategories(data));
   }, []);
@@ -33,7 +33,7 @@ const Productedit = () => {
   }, [categories, category]);
 
   const getSingleProduct = async () => {
-    const res = await fetch(`http://localhost:3000/product/${id}`);
+    const res = await fetch(`https://e-commerce-2tio.onrender.com/product/${id}`);
     const data = await res.json();
 
     setGender(data.gender || "unisex");
@@ -62,7 +62,7 @@ const Productedit = () => {
       gender,
     };
 
-    await fetch(`http://localhost:3000/product/${id}`, {
+    await fetch(`https://e-commerce-2tio.onrender.com/product/${id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(updatedProduct),

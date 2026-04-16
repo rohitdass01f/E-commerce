@@ -14,7 +14,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost:3000/user/login", {
+      const response = await fetch("https://e-commerce-2tio.onrender.com/user/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -17,7 +17,7 @@ const Searchpage = () =>{
     const getproduct = async () =>{
 
       try {
-        const response = await fetch("http://localhost:3000/product");
+        const response = await fetch("https://e-commerce-2tio.onrender.com/product");
 
         const data = await response.json();
         console.log(data);

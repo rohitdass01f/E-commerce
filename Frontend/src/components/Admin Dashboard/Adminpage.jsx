@@ -34,7 +34,7 @@ const Adminpage = () => {
       setLoadingDashboard(true);
       const token = localStorage.getItem("token");
 
-      const res = await fetch("http://localhost:3000/admin/dashboard", {
+      const res = await fetch("https://e-commerce-2tio.onrender.com/admin/dashboard", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -53,7 +53,7 @@ const Adminpage = () => {
     try {
       const token = localStorage.getItem("token");
 
-      const res = await fetch(`http://localhost:3000/order/${orderId}/status`, {
+      const res = await fetch(`https://e-commerce-2tio.onrender.com/order/${orderId}/status`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -81,7 +81,7 @@ const Adminpage = () => {
     try {
       const token = localStorage.getItem("token");
 
-      const res = await fetch("http://localhost:3000/admin/users", {
+      const res = await fetch("https://e-commerce-2tio.onrender.com/admin/users", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -99,7 +99,7 @@ const Adminpage = () => {
 
     const token = localStorage.getItem("token");
 
-    const res = await fetch(`http://localhost:3000/order/${id}`, {
+    const res = await fetch(`https://e-commerce-2tio.onrender.com/order/${id}`, {
       method: "DELETE",
       headers: {
         Authorization: `Bearer ${token}`,
@@ -114,7 +114,7 @@ const Adminpage = () => {
   const fetchOrders = async () => {
     const token = localStorage.getItem("token");
 
-    const res = await fetch("http://localhost:3000/order/admin", {
+    const res = await fetch("https://e-commerce-2tio.onrender.com/order/admin", {
       headers: {
         Authorization: `Bearer ${token}`,
       },

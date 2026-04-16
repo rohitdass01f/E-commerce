@@ -40,7 +40,7 @@ const Checkout = () => {
     const token = localStorage.getItem("token");
     console.log("TOKEN 👉", token);
 
-    const res = await fetch("http://localhost:3000/order", {
+    const res = await fetch("https://e-commerce-2tio.onrender.com/order", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

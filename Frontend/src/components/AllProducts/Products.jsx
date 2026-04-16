@@ -14,7 +14,7 @@ const Products = () => {
 
   const getproduct = async () => {
     try {
-      const response = await fetch("http://localhost:3000/product");
+      const response = await fetch("https://e-commerce-2tio.onrender.com/product");
 
       const data = await response.json();
       console.log(data);
@@ -41,7 +41,7 @@ const Products = () => {
   try {
     const token = JSON.parse(localStorage.getItem("token"));
 
-    const res = await fetch(`http://localhost:3000/product/${id}`, {
+    const res = await fetch(`https://e-commerce-2tio.onrender.com/product/${id}`, {
       method: "DELETE",
       headers: {
         Authorization: `Bearer ${token}`,

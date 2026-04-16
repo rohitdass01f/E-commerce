@@ -14,7 +14,7 @@ const ProductUpload = () => {
   const [brand, setBrand] = useState("");
 
   useEffect(() => {
-    fetch("http://localhost:3000/category")
+    fetch("https://e-commerce-2tio.onrender.com/category")
       .then((res) => res.json())
       .then((data) => setCategories(data));
   }, []);
@@ -58,7 +58,7 @@ const ProductUpload = () => {
   };
 
   const uploadToServer = async (urls) => {
-    await fetch("http://localhost:3000/product", {
+    await fetch("https://e-commerce-2tio.onrender.com/product", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

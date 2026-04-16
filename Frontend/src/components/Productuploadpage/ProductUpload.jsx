@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-import "./ProductUpload.css";
+import "./productupload.css";
 
 const ProductUpload = () => {
   const [productName, setProductName] = useState("");

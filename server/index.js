@@ -2,21 +2,27 @@ const dotenv = require("dotenv");
 dotenv.config();
 
 const express = require("express");
-const connection = require("./config/connection");
-const app = express();
 const cors = require("cors");
 
-app.use(
-  cors({
-    origin: "*",
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    credentials: true,
-  }),
-);
+const app = express();
+
+
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "*");
+  res.header("Access-Control-Allow-Methods", "GET,POST,PUT,DELETE,OPTIONS");
+  next();
+});
+
+
+app.use(cors());
+
+
+app.options("*", cors());
 
 app.use(express.json());
 
-// routes
+
 app.use("/admin", require("./routes/adminRoutes"));
 app.use("/order", require("./routes/orderRoutes"));
 app.use("/category", require("./routes/categoryRoutes"));
@@ -25,9 +31,10 @@ app.use("/user", require("./routes/userRoutes"));
 app.use("/product", require("./routes/productRoutes"));
 
 app.get("/", (req, res) => {
-  res.send("server running");
+  res.send("server running successfully");
 });
 
-app.listen(3000, () => {
-  console.log("server running at port 3000");
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`server running on port ${PORT}`);
 });

@@ -1,11 +1,13 @@
-const dotenv = require("dotenv");
-dotenv.config();
+if (process.env.NODE_ENV !== "production") {
+  require("dotenv").config();
+}
 
 const express = require("express");
 const cors = require("cors");
 
 const app = express();
 
+require("./db");
 
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
@@ -14,14 +16,8 @@ app.use((req, res, next) => {
   next();
 });
 
-
 app.use(cors());
-
-
-
-
 app.use(express.json());
-
 
 app.use("/admin", require("./routes/adminRoutes"));
 app.use("/order", require("./routes/orderRoutes"));
